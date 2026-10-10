@@ -7,9 +7,23 @@
 
 ## 安装
 
+有两种方式，任选其一。
+
+### 方式一：拖入 .crx 安装包
+
 1. 打开 `chrome://extensions`
 2. 打开右上角「开发者模式」
-3. 点「加载已解压的扩展程序」，选择本文件夹 `scroll-screenshot`
+3. 把 `scroll-screenshot.crx` 拖进这个页面，在弹出的确认框里点「添加扩展程序」
+
+> Chrome 正式版（Windows / macOS）会自动停用不是从应用商店安装的扩展。如果安装后显示「已停用」且无法开启，请改用方式二。360 极速浏览器、QQ 浏览器、Chrome 开发版 / Canary 等一般可以直接使用。
+
+### 方式二：加载文件夹（任何 Chrome 都可用）
+
+1. 把 `scroll-screenshot` 文件夹（或解压 `scroll-screenshot-1.0.0.zip` 得到的文件夹）放到固定位置，之后不要移动或删除
+2. 打开 `chrome://extensions`，打开右上角「开发者模式」
+3. 点「加载已解压的扩展程序」，选择这个文件夹
+
+安装后，点地址栏右边的拼图图标 🧩，把「滚动长截图」固定到工具栏。
 
 ## 使用
 
@@ -36,3 +50,18 @@
 - 单次最长约 60000 CSS 像素 / 200 屏；超出单张画布上限（32000 像素）时会自动按顺序拆成多张图片
 - iframe 内部的滚动内容不会被滚动
 - 仅保留最近 10 次截图结果
+
+## 打包（开发者）
+
+修改代码后，先把 `manifest.json` 里的 `version` 改大，再用 Chrome 打包成 `.crx`：
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --pack-extension="/Users/mico/Desktop/Mico/实用工具/scroll-screenshot" \
+  --pack-extension-key="/Users/mico/Desktop/Mico/实用工具/scroll-screenshot.pem" \
+  --no-message-box
+```
+
+生成的 `scroll-screenshot.crx` 在 `scroll-screenshot` 文件夹的上一级目录。
+
+`scroll-screenshot.pem` 是签名私钥，决定了扩展的 ID。请妥善保存、不要外发；以后必须用同一个私钥打包，新版本才能覆盖旧版本。
