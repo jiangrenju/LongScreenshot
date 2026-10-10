@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "滚动长截图",
+  "version": "1.0.0",
+  "description": "全屏或框选区域自动滚动截图，并拼接成一张长图。",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "滚动长截图",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "capture-full": {
+      "suggested_key": { "default": "Alt+Shift+F" },
+      "description": "全屏滚动截图"
+    },
+    "capture-region": {
+      "suggested_key": { "default": "Alt+Shift+R" },
+      "description": "区域滚动截图"
+    }
+  }
+}

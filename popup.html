@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>滚动长截图</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="icons/icon32.png" alt="" width="22" height="22" />
+      <h1>滚动长截图</h1>
+    </header>
+
+    <div class="modes">
+      <button class="mode" data-mode="full">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="2.5" width="16" height="15" rx="2.5" />
+          <path d="M8 7.5h8M8 11h8" />
+          <path d="M8.5 19.5 12 22l3.5-2.5" />
+        </svg>
+        <span class="text">
+          <strong>全屏滚动截图</strong>
+          <small>自动滚动整个页面并拼接</small>
+        </span>
+        <kbd data-command="capture-full"></kbd>
+      </button>
+      <button class="mode" data-mode="region">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="3" width="16" height="14" rx="1.5" stroke-dasharray="3 2.6" />
+          <path d="M8.5 19.5 12 22l3.5-2.5" />
+        </svg>
+        <span class="text">
+          <strong>区域滚动截图</strong>
+          <small>框选区域后自动滚动拼接</small>
+        </span>
+        <kbd data-command="capture-region"></kbd>
+      </button>
+    </div>
+
+    <p id="error" role="alert" hidden></p>
+
+    <section class="settings">
+      <label class="row">
+        <span>滚动间隔</span>
+        <select id="delay">
+          <option value="250">快速</option>
+          <option value="450">标准</option>
+          <option value="900">慢速（懒加载页面）</option>
+        </select>
+      </label>
+      <label class="row">
+        <span>图片清晰度</span>
+        <select id="quality">
+          <option value="original">高清（屏幕原始像素）</option>
+          <option value="1x">标准（1 倍）</option>
+        </select>
+      </label>
+      <label class="row">
+        <span>隐藏悬浮 / 吸顶元素</span>
+        <input type="checkbox" id="hideFixed" />
+      </label>
+    </section>
+
+    <footer>截图过程中按 <kbd>Enter</kbd> 完成，<kbd>Esc</kbd> 取消</footer>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

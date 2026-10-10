@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>长截图</title>
+    <link rel="icon" href="icons/icon32.png" />
+    <link rel="stylesheet" href="result.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="info">
+        <h1 id="title">长截图</h1>
+        <p id="meta"></p>
+      </div>
+      <div class="actions">
+        <button id="zoom" type="button">原始尺寸</button>
+        <button id="copy" type="button">复制图片</button>
+        <button id="download" type="button" class="primary">下载 PNG</button>
+      </div>
+    </header>
+    <p id="notice" hidden></p>
+    <main id="stage" class="fit"></main>
+    <div id="toast" role="status" hidden></div>
+    <script type="module" src="result.js"></script>
+  </body>
+</html>
