@@ -13,7 +13,7 @@
 
 1. 打开 `chrome://extensions`
 2. 打开右上角「开发者模式」
-3. 把 `scroll-screenshot.crx` 拖进这个页面，在弹出的确认框里点「添加扩展程序」
+3. 把 `scroll-screenshot.crx` 拖进这个页面，在弹出的确认框里点「添加扩展程序」 https://github.com/jiangrenju/LongScreenshot/blob/main/out_put/scroll-screenshot.crx
 
 > Chrome 正式版（Windows / macOS）会自动停用不是从应用商店安装的扩展。如果安装后显示「已停用」且无法开启，请改用方式二。360 极速浏览器、QQ 浏览器、Chrome 开发版 / Canary 等一般可以直接使用。
 
@@ -21,7 +21,7 @@
 
 1. 把 `scroll-screenshot` 文件夹（或解压 `scroll-screenshot-1.0.0.zip` 得到的文件夹）放到固定位置，之后不要移动或删除
 2. 打开 `chrome://extensions`，打开右上角「开发者模式」
-3. 点「加载已解压的扩展程序」，选择这个文件夹
+3. 点「加载已解压的扩展程序」，选择这个文件夹   https://github.com/jiangrenju/LongScreenshot/blob/main/out_put/scroll-screenshot-1.0.0.zip
 
 安装后，点地址栏右边的拼图图标 🧩，把「滚动长截图」固定到工具栏。
 
